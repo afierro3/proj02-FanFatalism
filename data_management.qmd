@@ -1,0 +1,35 @@
+---
+title: "NFL Injury Data Management"
+author: "Tony Fierro"
+format: pdf
+editor: visual
+---
+
+## Data Source
+
+Historical NFL injury reports from the nflverse project,
+accessed using the nflreadr R package.
+
+## Import Data
+
+```{r}
+#| message: false
+#| warning: false
+
+library(nflreadr)
+library(dplyr)
+
+injuries <- load_injuries(seasons = 2024)
+```
+
+## Examine Dataset
+
+The 2024 NFL injury dataset contains 6,215 observations
+and 16 variables.
+
+```{r}
+#| echo: true
+
+glimpse(injuries)
+```
+
